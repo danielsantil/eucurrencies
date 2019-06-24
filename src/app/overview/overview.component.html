@@ -1,0 +1,32 @@
+<div class="container p-2">
+
+  <h2>EU Currencies</h2>
+
+  <div class="card-deck mt-4">
+    <div class="card" *ngFor="let country of countries">
+      <div class="card-body p-0">
+        <div class="d-flex flex-row card-title mt-3 pl-2">
+          <img src="/assets/flags/{{country.flagIcon}}" class="mr-5" alt="{{country.name}}">
+          <h5>{{country.name}}</h5>
+        </div>
+        <div class="card-text pl-2">
+          <div class="mb-2">
+            <span class="font-weight-bold">Currency: </span>
+            <span>{{country.currency.description}} ({{country.currency.code}})</span>
+          </div>
+          <div class="mb-3">
+            <span>1 EUR = </span>
+            <span *ngIf="country.rate" class="font-weight-bold">{{country.rate.value}}</span>
+            <span *ngIf="!country.rate">N/A</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <small *ngIf="country.rate" class="text-muted">
+            Last updated: {{country.rate.lastUpdated}}</small>
+          <small *ngIf="!country.rate" class="text-muted">Last updated: N/A</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

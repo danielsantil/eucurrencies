@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/0921add2-4118-4031-a01e-56ce094ece5d/resourceGroups/infox-santil/providers/Microsoft.Web/sites/eucurrencies",
+    "appService.deploySubpath": "dist"
+}
